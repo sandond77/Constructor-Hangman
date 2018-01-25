@@ -1,4 +1,4 @@
-var LetterGenerator = require('./letter.js')
+var Letter= require('./letter.js')
 
 // var dogs = ["husky", "corgi", "beagle", "poodle", "shiba", "bulldog","terrier", "pug", "boxer", "chihuahua"];
 
@@ -6,25 +6,34 @@ var LetterGenerator = require('./letter.js')
 
 // var word = dogs[seed];
 
-var WordGenerator = function(word){
+var Word = function(word){
 	this.word = [];
 	this.showLetter = [];
+
 	this.addArray = function(){
 		for (var i = 0; i < word.length; i++) {
-			this.word.push(new LetterGenerator(word[i]));
+			this.word.push(new Letter(word[i]));
 		}
 	}
+
 	this.underscorer = function(){
 		for (var i = 0; i < word.length; i++) {
 			this.showLetter.push(this.word[i].currentShow);
 		}
-	
+		this.showLetter = String(this.showLetter);
+		var find = ",";
+		var re = new RegExp(find, "g");
+		this.showLetter = this.showLetter.replace(re," ");
 	}
 }
 
-var test = new WordGenerator("husky");
-test.addArray();
-test.underscorer();
-console.log(typeof(test.showLetter[0]));
+// var test = new Word("husky");
+// test.addArray();
+// test.word[0].repeat("h")
+// test.underscorer();
+// console.log(test);
+// console.log(test.showLetter);
+// console.log("Testing repeated letter\n" + '------------------------------')
+// test.word[0].repeat("h")
 
-module.exports = WordGenerator;
+module.exports = Word;

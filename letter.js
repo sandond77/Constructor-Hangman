@@ -1,4 +1,4 @@
-var LetterGenerator = function(arg){
+var Letter = function(arg){
 	this.letter = arg;
 	this.blank = "_";
 	this.currentShow = this.blank;
@@ -14,13 +14,16 @@ var LetterGenerator = function(arg){
 			console.log("Incorrect!")
 		}
 	}
-	this.repeat = function(){
+	this.repeat = function(guess){
 		if (this.guessed === true){
 			console.log("You have already guessed this letter!")
+		} else {
+			console.log("Letter has not been used")
+			this.checker(guess);
 		}
 	}
 
 }
 
-module.exports = LetterGenerator;
+module.exports = Letter;
 
