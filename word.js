@@ -1,10 +1,4 @@
-var Letter= require('./letter.js')
-
-// var dogs = ["husky", "corgi", "beagle", "poodle", "shiba", "bulldog","terrier", "pug", "boxer", "chihuahua"];
-
-// var seed = Math.floor((Math.random() * 10));
-
-// var word = dogs[seed];
+var Letter = require('./letter.js')
 
 var Word = function(word){
 	this.word = [];
@@ -17,6 +11,7 @@ var Word = function(word){
 	}
 
 	this.underscorer = function(){
+		this.showLetter = [];
 		for (var i = 0; i < word.length; i++) {
 			this.showLetter.push(this.word[i].currentShow);
 		}
@@ -24,6 +19,7 @@ var Word = function(word){
 		var find = ",";
 		var re = new RegExp(find, "g");
 		this.showLetter = this.showLetter.replace(re," ");
+		console.log('\n' + this.showLetter + '\n')
 	}
 }
 

@@ -9,16 +9,12 @@ var Letter = function(arg){
 		if (guess===this.letter){
 			this.status = true;
 			this.currentShow = this.letter;
-			console.log("Correct!")
-		} else {
-			console.log("Incorrect!")
-		}
+		} 
 	}
 	this.repeat = function(guess){
 		if (this.guessed === true){
 			console.log("You have already guessed this letter!")
 		} else {
-			console.log("Letter has not been used")
 			this.checker(guess);
 		}
 	}
