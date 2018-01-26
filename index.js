@@ -7,7 +7,7 @@ var dogs = ["husky", "corgi", "beagle","shiba", "boxer"];
 // var mammals = ["gorilla", "elephant", "dolphin", "monkey", "rabbit", "manatee", "squirrel", "hedgehog","otter","raccoon"];
 // var animals = ["chameleon", "penguin", "jellyfish", "brachiosaurus", "kangaroo", "chinchilla", "walrus", "human","catfish","triceratops"];
 var booleanArray = [];
-
+var winCheck = false;
 var currentWord = new Word(dogs[seed]);
 
 function game(){
@@ -19,6 +19,7 @@ function game(){
 
 	// 	}
 	// ])
+	winCheck = false;
 	currentWord.addArray();
 	currentWord.underscorer();
 	prompter();
@@ -53,11 +54,10 @@ function prompter(){
 		for (var i = 0; i < dogs[seed].length; i++) {
 			currentWord.word[i].changed = false
 		}
-
 		
-		if (currentWord.showletter === dogs[seed]) {
+		if (winCheck === true) {
 			console.log("You Win!") 
-		} else if (guesses > 0 && currentWord.showletter !== dogs[seed]){
+		} else if (guesses > 0 && currentWord.showLetter === false){
 			prompter();
 		} else if (guesses === 0){
 			console.log("You Lose!")
