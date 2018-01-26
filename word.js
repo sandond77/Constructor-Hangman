@@ -23,13 +23,5 @@ var Word = function(word){
 	}
 }
 
-// var test = new Word("husky");
-// test.addArray();
-// test.word[0].repeat("h")
-// test.underscorer();
-// console.log(test);
-// console.log(test.showLetter);
-// console.log("Testing repeated letter\n" + '------------------------------')
-// test.word[0].repeat("h")
-
 module.exports = Word;
+ 
