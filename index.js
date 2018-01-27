@@ -59,10 +59,7 @@ function prompter(){
 
 		if (winCheck === true) {
 			console.log("You Win!") 
-			console.log("---------------------------------!")
-			seed = Math.floor((Math.random() * 5));
-			currentWord = new Word(dogs[seed]);
-
+			console.log("---------------------------------------------------------------------")
 			replay();
 		} else if (guesses > 0 && winCheck===false){
 			prompter();
@@ -78,6 +75,9 @@ function isFalse(arg) {
 }
 
 function replay(){
+	seed = Math.floor((Math.random() * 5));
+	currentWord = new Word(dogs[seed]);
+
 	inquirer.prompt([
 		{
 		type:"confirm",
