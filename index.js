@@ -1,7 +1,7 @@
 var inquirer = require('inquirer');
 var Word = require('./word.js')
 var guesses = 10;
-var seed = Math.floor((Math.random() * 5));
+var seed = Math.floor((Math.random() * 10));
 var flag = false;
 var dogs = ["husky", "corgi", "beagle", "poodle", "shiba", "bulldog","terrier", "pug", "boxer", "chihuahua"];
 var booleanArray = [];
@@ -75,7 +75,7 @@ function isFalse(arg) {
 }
 
 function replay(){
-	seed = Math.floor((Math.random() * 5));
+	seed = Math.floor((Math.random() * 10));
 	currentWord = new Word(dogs[seed]);
 
 	inquirer.prompt([
